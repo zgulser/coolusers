@@ -1,0 +1,12 @@
+{
+  "name": "Theo",
+  "id": "15",
+  "phone": "+31 6 20 520 117",
+  "email": "theo@gmail.com",
+  "age": 26,
+  "groups": [
+    "User"
+  ],
+  "imageThumbnailUrl": "https://api.adorable.io/avatars/96/mouth3@adorable.png",
+  "imageUrl": "https://api.adorable.io/avatars/300/mouth3@adorable.png"
+}

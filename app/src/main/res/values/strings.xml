@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Cools Users</string>
+    <string name="user_list_loading_failed">Unable to load users. Please check your connection!</string>
+    <string name="user_loading_failed">Unable to load a single user. Please check your connection!</string>
+    <string name="user_name_presenter" formatted="true">Name: %s</string>
+    <string name="user_phone_presenter" formatted="true">Phone: %s</string>
+    <string name="user_email_presenter" formatted="true">Email: %s</string>
+    <string name="user_groups_presenter" formatted="true">Role(s): %s</string>
+</resources>

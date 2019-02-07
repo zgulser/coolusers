@@ -1,0 +1,12 @@
+{
+  "name": "Chuck",
+  "id": "67",
+  "phone": "+31 6 20 520 117",
+  "email": "chuck@gmail.com",
+  "age": 43,
+  "groups": [
+    "User"
+  ],
+  "imageThumbnailUrl": "https://api.adorable.io/avatars/96/mouth4@adorable.png",
+  "imageUrl": "https://api.adorable.io/avatars/300/mouth4@adorable.png"
+}

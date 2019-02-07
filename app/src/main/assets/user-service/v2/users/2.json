@@ -1,0 +1,12 @@
+{
+  "name": "Katrin",
+  "id": "2",
+  "phone": "+31 6 20 520 117",
+  "email": "katrin@gmail.com",
+  "age": 37,
+  "groups": [
+    "User"
+  ],
+  "imageThumbnailUrl": "https://api.adorable.io/avatars/96/eyes2@adorable.png",
+  "imageUrl": "https://api.adorable.io/avatars/300/eyes2@adorable.png"
+}

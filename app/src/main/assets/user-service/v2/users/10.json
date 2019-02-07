@@ -1,0 +1,12 @@
+{
+  "name": "John",
+  "id": "10",
+  "phone": "+31 6 20 520 117",
+  "email": "john@gmail.com",
+  "age": 33,
+  "groups": [
+    "Moderator"
+  ],
+  "imageThumbnailUrl": "https://api.adorable.io/avatars/96/eyes7@adorable.png",
+  "imageUrl": "https://api.adorable.io/avatars/300/eyes7@adorable.png"
+}

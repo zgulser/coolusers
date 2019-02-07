@@ -1,0 +1,12 @@
+{
+  "name": "Ada",
+  "id": "100",
+  "phone": "+31 6 20 520 117",
+  "email": "ada@gmail.com",
+  "age": 150,
+  "groups": [
+    "User"
+  ],
+  "imageThumbnailUrl": "https://api.adorable.io/avatars/96/nose2@adorable.png",
+  "imageUrl": "https://api.adorable.io/avatars/300/nose2@adorable.png"
+}

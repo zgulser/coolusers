@@ -1,0 +1,12 @@
+{
+  "name": "Bart",
+  "id": "29",
+  "phone": "+31 6 20 520 117",
+  "email": "bart@gmail.com",
+  "age": 16,
+  "groups": [
+    "User"
+  ],
+  "imageThumbnailUrl": "https://api.adorable.io/avatars/96/mouth1@adorable.png",
+  "imageUrl": "https://api.adorable.io/avatars/300/mouth1@adorable.png"
+}

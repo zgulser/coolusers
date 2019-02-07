@@ -1,0 +1,12 @@
+{
+  "name": "Tom",
+  "id": "3",
+  "phone": "+31 6 20 520 117",
+  "email": "tom@gmail.com",
+  "groups": [
+    "User"
+  ],
+  "age": 14,
+  "imageThumbnailUrl": "https://api.adorable.io/avatars/96/eyes3@adorable.png",
+  "imageUrl": "https://api.adorable.io/avatars/300/eyes3@adorable.png"
+}
