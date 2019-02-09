@@ -9,8 +9,7 @@ import com.ing.android.coolusers.utilities.InjectionUtils
 import com.ing.android.coolusers.utilities.SingletonHolder
 
 /**
- * Desc: Includes a loader to map calls to relevant gateways. Responds to "Repository" idiom
- *       in architecture components
+ * Desc: Implementation of UserService
  */
 
 class UserServiceImpl private constructor(context: Context) : UserService {

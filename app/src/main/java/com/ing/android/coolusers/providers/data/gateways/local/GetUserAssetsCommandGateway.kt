@@ -10,23 +10,28 @@ import com.ing.android.coolusers.domain.listeners.*
 import com.ing.android.coolusers.domain.objects.User
 import com.ing.android.coolusers.domain.usecases.CommandGateway
 import com.ing.android.coolusers.domain.usecases.USER_ID_BUNDLE_KEY
+import com.ing.android.coolusers.utilities.InjectionUtils
 import com.ing.android.coolusers.utilities.ServiceUtils
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import org.json.JSONException
 
 /**
- * Desc: Gateway to a user retriaval service
+ * Desc: An implementation of CommandGateway. Loads one User from a local json file
  */
 
 class GetUserAssetsCommandGateway(context: Context) : CommandGateway(context) {
 
-    override fun transact(requestArgs: Bundle, genericListener: GenericListener) {
+    init {
+        dataParser = InjectionUtils.provideDataParser()
+    }
+
+    override fun transact(arguments: Bundle, genericListener: GenericListener) {
         AppScope.launch(Dispatchers.IO) {
-            val uid: String = requestArgs.getString(USER_ID_BUNDLE_KEY)
+            val uid: String = arguments.getString(USER_ID_BUNDLE_KEY)
             val fileUrl = ServiceUtils.buildGetUserUrl(uid)
-            val userListAsStr = context.assets.open(fileUrl + ".json").bufferedReader().use { it.readText() }
-            val userResult = dataParser.parseUser(userListAsStr, ::parsePayload)
+            val userAsStr = context.assets.open(fileUrl + ".json").bufferedReader().use { it.readText() }
+            val userResult = dataParser.parseUser(userAsStr, ::parsePayload)
             when (userResult) {
                 is UserResult.UserSuccess -> (genericListener as GetUserListener).onSuccess(userResult.user)
                 is UserResult.UserFailure -> (genericListener as GetUserListener).onFailure(userResult.reason)

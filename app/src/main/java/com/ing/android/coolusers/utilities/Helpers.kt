@@ -1,7 +1,13 @@
 package com.ing.android.coolusers.utilities
 
+/**
+ * Desc: Helper class to wrap around singleton class creation
+ */
+
 open class SingletonHolder<out T, in A>(creator: (A) -> T) {
+
     private var creator: ((A) -> T)? = creator
+
     @Volatile private var instance: T? = null
 
     fun getInstance(arg: A): T {

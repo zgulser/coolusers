@@ -13,16 +13,21 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import com.google.gson.reflect.TypeToken
 import com.ing.android.coolusers.domain.listeners.*
+import com.ing.android.coolusers.utilities.InjectionUtils
 import org.json.JSONException
 import java.lang.Exception
 
 /**
- * Desc: Gateway to a user list retriaval service
+ * Desc: An implementation of CommandGateway. Loads list of users from a local json file
  */
 
 class GetUserListAssetsCommandGateway (context: Context) : CommandGateway(context) {
 
-    override fun transact(requestArgs: Bundle, genericListener: GenericListener) {
+    init {
+        dataParser = InjectionUtils.provideDataParser()
+    }
+
+    override fun transact(arguments: Bundle, genericListener: GenericListener) {
         AppScope.launch(Dispatchers.IO){
             try {
                 val fileUrl = ServiceUtils.buildGetUserListUrl()

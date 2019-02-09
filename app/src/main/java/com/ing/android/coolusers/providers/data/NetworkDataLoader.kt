@@ -9,7 +9,7 @@ import com.ing.android.coolusers.providers.data.gateways.network.GetUserListNetw
 import com.ing.android.coolusers.service.DataLoader
 
 /**
- * Desc: Defines what and how the commands (use cases) to be executed upon an incoming User request
+ * Desc: An implementation of DataLoader
  */
 
 class NetworkDataLoader (val context: Context) : DataLoader {

@@ -9,7 +9,7 @@ import com.ing.android.coolusers.providers.data.gateways.local.GetUserListAssets
 import com.ing.android.coolusers.service.DataLoader
 
 /**
- * Desc: Defines what and how the commands (use cases) to be executed upon an incoming User request
+ * Desc: An implementation of DataLoader
  */
 
 class LocalDataLoader (val context: Context) : DataLoader {

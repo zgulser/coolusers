@@ -4,7 +4,7 @@ import com.ing.android.coolusers.domain.listeners.GenericListener
 import com.ing.android.coolusers.domain.objects.User
 
 /**
- * Desc: Defines what services (use cases) available for "User"
+ * Desc: Services (use cases) available for "User"
  */
 
 interface UserService {
