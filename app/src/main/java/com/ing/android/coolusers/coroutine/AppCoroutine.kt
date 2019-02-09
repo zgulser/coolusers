@@ -5,9 +5,11 @@ import kotlinx.coroutines.CoroutineExceptionHandler
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.plus
 
+const val TAG = "Cool Users!"
+const val MSG = "Coroutine crashed"
 
-val LoggingExceptionHandler = CoroutineExceptionHandler { _, t ->
-  Log.w("App", "Coroutine crashed", t)
+val LoggingExceptionHandler = CoroutineExceptionHandler { ctx, throwable ->
+  Log.w(TAG, MSG, throwable)
 }
 
 val AppScope = GlobalScope + LoggingExceptionHandler

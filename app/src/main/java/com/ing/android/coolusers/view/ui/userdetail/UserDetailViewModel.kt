@@ -29,13 +29,4 @@ class UserDetailViewModel constructor(application: Application): BaseViewModel(a
             LocalBroadcastManager.getInstance(getApplication()).sendBroadcast(intent)
         }
     }
-
-    fun groupsAsStr() : StringBuilder {
-        val group = StringBuilder()
-        user.value?.groups?.forEach {
-            group.append(it)
-        }
-        return group
-    }
-
 }

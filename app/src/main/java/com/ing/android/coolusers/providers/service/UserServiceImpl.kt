@@ -1,8 +1,11 @@
 package com.ing.android.coolusers.providers.service
 
 import android.content.Context
+import android.os.Bundle
 import com.ing.android.coolusers.domain.listeners.GenericListener
 import com.ing.android.coolusers.domain.objects.User
+import com.ing.android.coolusers.domain.usecases.CommandGateway
+import com.ing.android.coolusers.domain.usecases.GetUserList
 import com.ing.android.coolusers.service.DataLoader
 import com.ing.android.coolusers.service.UserService
 import com.ing.android.coolusers.utilities.InjectionUtils

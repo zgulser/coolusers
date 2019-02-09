@@ -11,7 +11,6 @@ class CoolUsersApplication : Application() {
 
     companion object {
         private lateinit var instance: CoolUsersApplication
-            private set
 
         fun getInstance() : CoolUsersApplication = instance
     }
