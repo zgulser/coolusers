@@ -20,15 +20,9 @@ import com.ing.android.coolusers.view.ui.BaseViewModel
 
 class UserListViewModel constructor(application: Application): BaseViewModel(application) {
 
-    var userList: MutableLiveData<List<User>> = MutableLiveData()
+    val userList: MutableLiveData<List<User>> = MutableLiveData()
 
-    init {
-        loadUserList()
-    }
-
-    private fun loadUserList(){
-        userService.getUserList(HashMap(), CustomUserListListener())
-    }
+    fun loadUserList() = userService.getUserList(HashMap(), CustomUserListListener())
 
     private inner class CustomUserListListener : GetUserListListener {
 

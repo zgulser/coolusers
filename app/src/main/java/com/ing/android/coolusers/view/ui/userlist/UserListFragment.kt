@@ -1,13 +1,10 @@
 package com.ing.android.coolusers.view.ui.userlist
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModel
-import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.ViewModelProviders
 import androidx.navigation.NavHost
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -16,9 +13,10 @@ import com.ing.android.coolusers.R
 import com.ing.android.coolusers.domain.objects.User
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.DefaultItemAnimator
+import com.ing.android.coolusers.view.ui.BaseFragment
 import com.ing.android.coolusers.view.ui.userdetail.UserDetailParams
 
-class UserListFragment : Fragment() {
+class UserListFragment : BaseFragment() {
 
     private lateinit var listViewModel: UserListViewModel
 
@@ -39,6 +37,7 @@ class UserListFragment : Fragment() {
                 viewModelFactory {
                     UserListViewModel(activity!!.application)
                 }).get(UserListViewModel::class.java)
+        listViewModel.loadUserList()
     }
 
     private fun setupList(view: View) {
@@ -62,10 +61,5 @@ class UserListFragment : Fragment() {
                 UserListFragmentDirections.showUserDetail(UserDetailParams(user.id))
         )
     }
-
-    protected inline fun <VM : ViewModel> viewModelFactory(crossinline f: () -> VM) =
-            object : ViewModelProvider.Factory {
-                override fun <T : ViewModel> create(aClass: Class<T>): T = f() as T
-            }
 
 }

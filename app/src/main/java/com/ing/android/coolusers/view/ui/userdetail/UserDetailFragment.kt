@@ -5,17 +5,14 @@ import android.os.Parcelable
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModel
-import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.ViewModelProviders
 import com.bumptech.glide.Glide
 import com.ing.android.coolusers.databinding.UserDetailFragmentBinding
-import com.ing.android.coolusers.view.ui.userlist.UserListAdapter
+import com.ing.android.coolusers.view.ui.BaseFragment
 import kotlinx.android.parcel.Parcelize
 
-class UserDetailFragment : Fragment() {
+class UserDetailFragment : BaseFragment() {
 
     private lateinit var detailViewModel: UserDetailViewModel
 
@@ -40,7 +37,7 @@ class UserDetailFragment : Fragment() {
                     UserDetailViewModel(activity!!.application)
                 }).get(UserDetailViewModel::class.java)
         val uid = UserDetailFragmentArgs.fromBundle(arguments?: Bundle()).detailParams.uid
-        detailViewModel.init(uid)
+        detailViewModel.loadUser(uid)
     }
 
     private fun setupView() {
@@ -54,11 +51,6 @@ class UserDetailFragment : Fragment() {
                 .into(detailItemBinding.imageView)
         })
     }
-
-    protected inline fun <VM : ViewModel> viewModelFactory(crossinline f: () -> VM) =
-            object : ViewModelProvider.Factory {
-                override fun <T : ViewModel> create(aClass: Class<T>):T = f() as T
-            }
 }
 
 @Parcelize
