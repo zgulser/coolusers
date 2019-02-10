@@ -22,7 +22,8 @@ class UserListViewModel constructor(application: Application): BaseViewModel(app
 
     val userList: MutableLiveData<List<User>> = MutableLiveData()
 
-    fun loadUserList() = userService.getUserList(HashMap(), CustomUserListListener())
+    fun loadUserList() =
+            userService.getUserList(HashMap(), CustomUserListListener())
 
     private inner class CustomUserListListener : GetUserListListener {
 

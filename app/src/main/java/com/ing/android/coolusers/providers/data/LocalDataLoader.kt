@@ -14,11 +14,10 @@ import com.ing.android.coolusers.service.DataLoader
 
 class LocalDataLoader (val context: Context) : DataLoader {
 
-    override fun getUser(uid: String, queryParams: Map<String, String>, genericListener: GenericListener) {
+    override fun getUser(uid: String, queryParams: Map<String, String>, genericListener: GenericListener) =
         GetUser(uid, queryParams, GetUserAssetsCommandGateway(context)).execute(genericListener)
-    }
 
-    override fun getUserList(queryParams: Map<String, String>, genericListener: GenericListener) {
+    override fun getUserList(queryParams: Map<String, String>, genericListener: GenericListener) =
         GetUserList(queryParams, GetUserListAssetsCommandGateway(context)).execute(genericListener)
-    }
+
 }

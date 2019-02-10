@@ -14,7 +14,8 @@ class UserDetailViewModel constructor(application: Application): BaseViewModel(a
 
     val user: MutableLiveData<User> = MutableLiveData()
 
-    fun loadUser(@NonNull uid: String) = userService.getUser(uid, HashMap(), UserListener())
+    fun loadUser(@NonNull uid: String) =
+            userService.getUser(uid, HashMap(), UserListener())
 
     private inner class UserListener : GetUserListener {
 

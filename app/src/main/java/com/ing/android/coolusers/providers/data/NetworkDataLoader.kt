@@ -14,11 +14,9 @@ import com.ing.android.coolusers.service.DataLoader
 
 class NetworkDataLoader (val context: Context) : DataLoader {
 
-    override fun getUser(uid: String, queryParams: Map<String, String>, genericListener: GenericListener) {
+    override fun getUser(uid: String, queryParams: Map<String, String>, genericListener: GenericListener) =
         GetUser(uid, queryParams, GetUserNetworkCommandGateway(context)).execute(genericListener)
-    }
 
-    override fun getUserList(queryParams: Map<String, String>, genericListener: GenericListener) {
+    override fun getUserList(queryParams: Map<String, String>, genericListener: GenericListener) =
         GetUserList(queryParams, GetUserListNetworkCommandGateway(context)).execute(genericListener)
-    }
 }

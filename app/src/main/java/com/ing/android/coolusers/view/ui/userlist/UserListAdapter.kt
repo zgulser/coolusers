@@ -6,8 +6,6 @@ import androidx.recyclerview.widget.DiffUtil.ItemCallback
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
 import com.bumptech.glide.Glide
-import com.bumptech.glide.GlideBuilder
-import com.ing.android.coolusers.R
 import com.ing.android.coolusers.domain.objects.User
 import com.ing.android.coolusers.databinding.UserListItemBinding
 
@@ -23,20 +21,20 @@ class UserListAdapter(private val listener: (User) -> Unit) :
         return UserHolder(itemBinding, listener)
     }
 
-    override fun onBindViewHolder(holder: UserHolder, position: Int) {
-        holder.bindTo(getItem(position))
-    }
+    override fun onBindViewHolder(holder: UserHolder, position: Int) = holder.bindTo(getItem(position))
 }
 
 class UserHolder(val itemBinding: UserListItemBinding, private val listener: (User) -> Unit) : ViewHolder(itemBinding.root) {
     fun bindTo(item: User) {
-        itemBinding.user = item
-        itemBinding.executePendingBindings()
-        Glide.with(itemBinding.root.context)
-                .load(itemBinding.user!!.imageThumbnailUrl)
-                .into(itemBinding.thumbnail)
-        itemView.setOnClickListener {
-            listener.invoke(item)
+        itemBinding.apply {
+            user = item
+            executePendingBindings()
+            Glide.with(root.context)
+                    .load(user!!.imageThumbnailUrl)
+                    .into(thumbnail)
+            itemView.setOnClickListener {
+                listener.invoke(item)
+            }
         }
     }
 }

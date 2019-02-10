@@ -41,7 +41,7 @@ class UserDetailFragment : BaseFragment() {
     }
 
     private fun setupView() {
-        detailViewModel.user.observe(this@UserDetailFragment, Observer { pUser ->
+        detailViewModel.user.observe(this, Observer { pUser ->
             detailItemBinding.apply {
                 userPresenter = UserDetailPresenter(activity!!.applicationContext, detailViewModel)
                 executePendingBindings()
