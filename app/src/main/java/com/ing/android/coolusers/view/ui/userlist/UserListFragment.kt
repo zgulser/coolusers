@@ -23,7 +23,7 @@ class UserListFragment : BaseFragment() {
     override fun onCreateView(inflater: LayoutInflater,
                               container: ViewGroup?,
                               savedInstanceState: Bundle?): View =
-        inflater.inflate(R.layout.user_list_fragment, container, false)
+            inflater.inflate(R.layout.user_list_fragment, container, false)
 
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

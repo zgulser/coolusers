@@ -19,5 +19,4 @@ class LocalDataLoader (val context: Context) : DataLoader {
 
     override fun getUserList(queryParams: Map<String, String>, genericListener: GenericListener) =
         GetUserList(queryParams, GetUserListAssetsCommandGateway(context)).execute(genericListener)
-
 }

@@ -8,11 +8,9 @@ typealias UserListParserFunc = (String) -> UserListResult
 
 class DataParser {
 
-    inline fun parseUser(payload: String, func: UserParserFunc) : UserResult {
-        return func(payload)
-    }
+    inline fun parseUser(payload: String, func: UserParserFunc): UserResult =
+            func(payload)
 
-    inline fun parseUserList(payload: String, func: UserListParserFunc) : UserListResult {
-        return func(payload)
-    }
+    inline fun parseUserList(payload: String, func: UserListParserFunc): UserListResult =
+            func(payload)
 }
