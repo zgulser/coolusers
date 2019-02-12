@@ -55,7 +55,3 @@ class UserDetailFragment : BaseFragment() {
 
 @Parcelize
 data class UserDetailParams(val uid: String) : Parcelable
-
-// extensions
-fun UserDetailParams.toBundle() = Bundle().apply { putParcelable("user_detail_params", this@toBundle) }
-private fun Bundle.toUserDetailParams() = this.getParcelable<UserDetailParams>("user_detail_params")
