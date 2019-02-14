@@ -37,7 +37,6 @@ class UserListFragment : BaseFragment() {
                 viewModelFactory {
                     UserListViewModel(activity!!.application)
                 }).get(UserListViewModel::class.java)
-        listViewModel.loadUserList()
     }
 
     private fun setupList(view: View) {
@@ -54,6 +53,7 @@ class UserListFragment : BaseFragment() {
                 (adapter as UserListAdapter).submitList(headUsers)
             })
         }
+        listViewModel.loadUserList()
     }
 
     private fun showUser(user: User) =

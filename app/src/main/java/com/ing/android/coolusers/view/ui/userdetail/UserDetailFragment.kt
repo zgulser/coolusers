@@ -28,7 +28,7 @@ class UserDetailFragment : BaseFragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         setupViewModel()
-        setupView()
+        setupDetailView()
     }
 
     private fun setupViewModel(){
@@ -36,11 +36,9 @@ class UserDetailFragment : BaseFragment() {
                 viewModelFactory {
                     UserDetailViewModel(activity!!.application)
                 }).get(UserDetailViewModel::class.java)
-        val uid = UserDetailFragmentArgs.fromBundle(arguments?: Bundle()).detailParams.uid
-        detailViewModel.loadUser(uid)
     }
 
-    private fun setupView() {
+    private fun setupDetailView() {
         detailViewModel.user.observe(this, Observer { pUser ->
             detailItemBinding.apply {
                 userPresenter = UserDetailPresenter(activity!!.applicationContext, detailViewModel)
@@ -50,6 +48,8 @@ class UserDetailFragment : BaseFragment() {
                 .load(pUser.imageUrl)
                 .into(detailItemBinding.imageView)
         })
+        val uid = UserDetailFragmentArgs.fromBundle(arguments?: Bundle()).detailParams.uid
+        detailViewModel.loadUser(uid)
     }
 }
 
