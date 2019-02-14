@@ -4,7 +4,6 @@ import android.content.Context
 import android.os.Bundle
 import android.util.Log
 import com.google.gson.Gson
-import com.ing.android.coolusers.app.CoolUsersApplication
 import com.ing.android.coolusers.coroutine.AppScope
 import com.ing.android.coolusers.domain.objects.User
 import com.ing.android.coolusers.domain.usecases.CommandGateway
