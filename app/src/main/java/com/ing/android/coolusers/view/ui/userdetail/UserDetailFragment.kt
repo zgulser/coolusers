@@ -43,10 +43,10 @@ class UserDetailFragment : BaseFragment() {
             detailItemBinding.apply {
                 userPresenter = UserDetailPresenter(activity!!.applicationContext, detailViewModel)
                 executePendingBindings()
+                Glide.with(root.context)
+                        .load(pUser.imageUrl)
+                        .into(imageView)
             }
-            Glide.with(detailItemBinding.root.context)
-                .load(pUser.imageUrl)
-                .into(detailItemBinding.imageView)
         })
         val uid = UserDetailFragmentArgs.fromBundle(arguments?: Bundle()).detailParams.uid
         detailViewModel.loadUser(uid)
