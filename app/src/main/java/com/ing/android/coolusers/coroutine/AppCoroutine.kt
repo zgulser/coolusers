@@ -8,7 +8,7 @@ import kotlinx.coroutines.plus
 const val TAG = "Cool Users!"
 const val MSG = "Coroutine crashed"
 
-val LoggingExceptionHandler = CoroutineExceptionHandler { ctx, throwable ->
+val LoggingExceptionHandler = CoroutineExceptionHandler { _, throwable ->
   Log.w(TAG, MSG, throwable)
 }
 
