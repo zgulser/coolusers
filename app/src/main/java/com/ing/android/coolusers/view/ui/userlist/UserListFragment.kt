@@ -46,18 +46,16 @@ class UserListFragment : BaseFragment() {
             itemAnimator = DefaultItemAnimator()
             layoutManager = LinearLayoutManager(view.context)
             adapter = UserListAdapter {
-                showUser(it)
+                (activity as NavHost).navController.navigate(
+                        UserListFragmentDirections.showUserDetail(UserDetailParams(it.id))
+                )
             }
             listViewModel.userList.observe(this@UserListFragment, Observer { users ->
                 val headUsers = users?.take(10)
-                (adapter as UserListAdapter).submitList(headUsers)
+                (adapter as? UserListAdapter ?: throw IllegalArgumentException("wrong adapter!")).submitList(headUsers)
+                (adapter as UserListAdapter).notifyItemChanged(0)
             })
         }
         listViewModel.loadUserList()
     }
-
-    private fun showUser(user: User) =
-            (activity as NavHost).navController.navigate(
-                    UserListFragmentDirections.showUserDetail(UserDetailParams(user.id))
-            )
 }

@@ -8,7 +8,9 @@ import com.ing.android.coolusers.domain.objects.User
  * Desc: Use cases for the user table
  */
 
-class GetUser(val uid: String, val queryParams: Map<out String, String> = HashMap(), val gateway: CommandGateway) : Command {
+class GetUser(private val uid: String,
+              private val queryParams: Map<out String, String> = HashMap(),
+              private val gateway: CommandGateway) : Command {
 
     override fun execute(genericListener: GenericListener) {
         val bundle = Bundle()
@@ -21,7 +23,9 @@ class GetUser(val uid: String, val queryParams: Map<out String, String> = HashMa
 }
 
 @SuppressWarnings("showcase: not used")
-class CreateUser(val user: User, val queryParams: Map<out String, String> = HashMap(), val gateway: CommandGateway) : Command {
+class CreateUser(private val user: User,
+                 private val queryParams: Map<out String, String> = HashMap(),
+                 private val gateway: CommandGateway) : Command {
 
     override fun execute(genericListener: GenericListener) {
         val bundle = Bundle()
@@ -33,7 +37,9 @@ class CreateUser(val user: User, val queryParams: Map<out String, String> = Hash
 }
 
 @SuppressWarnings("showcase: not used")
-class DeleteUser(val uid: String, val queryParams: Map<out String, String> = HashMap(), val gateway: CommandGateway) : Command {
+class DeleteUser(private val uid: String,
+                 private val queryParams: Map<out String, String> = HashMap(),
+                 private val gateway: CommandGateway) : Command {
 
     override fun execute(genericListener: GenericListener) {
         val bundle : Bundle = Bundle.EMPTY
@@ -46,7 +52,9 @@ class DeleteUser(val uid: String, val queryParams: Map<out String, String> = Has
 }
 
 @SuppressWarnings("showcase: not used")
-class UpdateUser(val user: User, val queryParams: Map<out String, String> = HashMap(), val gateway: CommandGateway) : Command {
+class UpdateUser(private val user: User,
+                 private val queryParams: Map<out String, String> = HashMap(),
+                 private val gateway: CommandGateway) : Command {
 
     override fun execute(genericListener: GenericListener) {
         val bundle : Bundle = Bundle.EMPTY
@@ -58,7 +66,8 @@ class UpdateUser(val user: User, val queryParams: Map<out String, String> = Hash
     }
 }
 
-class GetUserList(val queryParams: Map<out String, String> = HashMap(), val gateway: CommandGateway) : Command {
+class GetUserList(private val queryParams: Map<out String, String> = HashMap(),
+                  private val gateway: CommandGateway) : Command {
 
     override fun execute(genericListener: GenericListener) {
         val bundle = Bundle()

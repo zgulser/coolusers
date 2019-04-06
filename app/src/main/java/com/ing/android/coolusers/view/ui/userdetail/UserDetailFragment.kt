@@ -16,12 +16,13 @@ class UserDetailFragment : BaseFragment() {
 
     private lateinit var detailViewModel: UserDetailViewModel
 
-    private lateinit var detailItemBinding : UserDetailFragmentBinding
+    private lateinit var detailItemBinding: UserDetailFragmentBinding
 
     override fun onCreateView(inflater: LayoutInflater,
                               container: ViewGroup?,
                               savedInstanceState: Bundle?): View {
         detailItemBinding = UserDetailFragmentBinding.inflate(layoutInflater, container, false)
+        detailItemBinding.setLifecycleOwner (viewLifecycleOwner)
         return detailItemBinding.root
     }
 
@@ -31,7 +32,7 @@ class UserDetailFragment : BaseFragment() {
         setupDetailView()
     }
 
-    private fun setupViewModel(){
+    private fun setupViewModel() {
         detailViewModel = ViewModelProviders.of(this,
                 viewModelFactory {
                     UserDetailViewModel(activity!!.application)
@@ -48,7 +49,7 @@ class UserDetailFragment : BaseFragment() {
                         .into(imageView)
             }
         })
-        val uid = UserDetailFragmentArgs.fromBundle(arguments?: Bundle()).detailParams.uid
+        val uid = UserDetailFragmentArgs.fromBundle(arguments ?: Bundle()).detailParams.uid
         detailViewModel.loadUser(uid)
     }
 }

@@ -20,6 +20,14 @@ class UserListViewModel constructor(application: Application): BaseViewModel(app
 
         override fun onSuccess(result: List<User>) {
             userList.postValue(result)
+            Thread(object : Runnable{
+                override fun run() {
+                    Thread.sleep(4000);
+                    userList.value!!.get(0)?.name = "abuss"
+                    userList.postValue(result)
+                }
+
+            }).start()
         }
 
         override fun onFailure(reason: String) {

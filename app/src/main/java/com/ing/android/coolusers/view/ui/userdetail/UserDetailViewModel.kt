@@ -9,6 +9,7 @@ import com.ing.android.coolusers.domain.listeners.GetUserListener
 import com.ing.android.coolusers.domain.objects.User
 import com.ing.android.coolusers.view.EVENT_USER_LOAD_FAILED
 import com.ing.android.coolusers.view.ui.BaseViewModel
+import java.util.*
 
 class UserDetailViewModel constructor(application: Application): BaseViewModel(application) {
 
@@ -29,4 +30,6 @@ class UserDetailViewModel constructor(application: Application): BaseViewModel(a
             LocalBroadcastManager.getInstance(getApplication()).sendBroadcast(intent)
         }
     }
+
+
 }

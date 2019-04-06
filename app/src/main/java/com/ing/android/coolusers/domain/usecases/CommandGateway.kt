@@ -13,7 +13,7 @@ abstract class CommandGateway(protected val context: Context) {
 
     protected lateinit var dataParser : DataParser
 
-    val transactions by lazy {
+    private val transactions by lazy {
         arrayListOf<Command>()
     }
 

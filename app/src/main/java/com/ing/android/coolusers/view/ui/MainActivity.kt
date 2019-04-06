@@ -24,13 +24,10 @@ class MainActivity : AppCompatActivity(), NavHost {
         ServiceFailureReceiver()
     }
 
-    private lateinit var appBarConfiguration: AppBarConfiguration
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        appBarConfiguration = AppBarConfiguration(navController.graph)
-        setupActionBarWithNavController(navController, appBarConfiguration)
+        setupActionBarWithNavController(navController)
     }
 
     override fun onStart() {
@@ -41,11 +38,9 @@ class MainActivity : AppCompatActivity(), NavHost {
                 serviceFailureReceiver, IntentFilter(EVENT_USER_LOAD_FAILED))
     }
 
-    override fun onSupportNavigateUp() =
-            navController.navigateUp(appBarConfiguration) || super.onSupportNavigateUp()
+    override fun onSupportNavigateUp() = navController.navigateUp()
 
-    override fun getNavController() =
-            findNavController(R.id.nav_host_fragment)
+    override fun getNavController() = findNavController(R.id.nav_host_fragment)
 
     private inner class ServiceFailureReceiver : BroadcastReceiver() {
         override fun onReceive(p0: Context?, intent: Intent?) {
