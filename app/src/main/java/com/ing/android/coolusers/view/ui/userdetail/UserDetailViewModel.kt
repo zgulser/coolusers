@@ -11,12 +11,18 @@ import com.ing.android.coolusers.view.EVENT_USER_LOAD_FAILED
 import com.ing.android.coolusers.view.ui.BaseViewModel
 import java.util.*
 
-class UserDetailViewModel constructor(application: Application): BaseViewModel(application) {
+class UserDetailViewModel constructor(application: Application, private val userId: String): BaseViewModel(application) {
 
-    val user: MutableLiveData<User> = MutableLiveData()
+    private val user: MutableLiveData<User> = MutableLiveData()
 
-    fun loadUser(@NonNull uid: String) =
-            userService.getUser(uid, HashMap(), UserListener())
+    init {
+        loadUser()
+    }
+
+    fun getUser() = user
+
+    private fun loadUser() =
+            userService.getUser(userId, HashMap(), UserListener())
 
     private inner class UserListener : GetUserListener {
 

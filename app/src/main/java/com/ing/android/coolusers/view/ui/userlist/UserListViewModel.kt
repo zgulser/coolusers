@@ -11,18 +11,26 @@ import com.ing.android.coolusers.view.ui.BaseViewModel
 
 class UserListViewModel constructor(application: Application): BaseViewModel(application) {
 
-    val userList: MutableLiveData<List<User>> = MutableLiveData()
+    private val userList: MutableLiveData<List<User>> = MutableLiveData()
 
-    fun loadUserList() =
+    init {
+        loadUserList()
+    }
+
+    fun getUsers() : MutableLiveData<List<User>>  = userList
+
+    private fun loadUserList() =
             userService.getUserList(HashMap(), CustomUserListListener())
 
     private inner class CustomUserListListener : GetUserListListener {
 
         override fun onSuccess(result: List<User>) {
             userList.postValue(result)
+
+            // stub to test data update
             Thread(object : Runnable{
                 override fun run() {
-                    Thread.sleep(4000);
+                    Thread.sleep(10000);
                     userList.value!!.get(0)?.name = "abuss"
                     userList.postValue(result)
                 }

@@ -1,5 +1,6 @@
 package com.ing.android.coolusers.view.ui.userdetail
 
+import android.content.res.Configuration
 import android.os.Bundle
 import android.os.Parcelable
 import android.view.LayoutInflater
@@ -33,14 +34,15 @@ class UserDetailFragment : BaseFragment() {
     }
 
     private fun setupViewModel() {
+        val uid = UserDetailFragmentArgs.fromBundle(arguments ?: Bundle()).detailParams.uid
         detailViewModel = ViewModelProviders.of(this,
                 viewModelFactory {
-                    UserDetailViewModel(activity!!.application)
+                    UserDetailViewModel(activity!!.application, uid)
                 }).get(UserDetailViewModel::class.java)
     }
 
     private fun setupDetailView() {
-        detailViewModel.user.observe(this, Observer { pUser ->
+        detailViewModel.getUser().observe(this, Observer { pUser ->
             detailItemBinding.apply {
                 userPresenter = UserDetailPresenter(activity!!.applicationContext, detailViewModel)
                 executePendingBindings()
@@ -49,8 +51,6 @@ class UserDetailFragment : BaseFragment() {
                         .into(imageView)
             }
         })
-        val uid = UserDetailFragmentArgs.fromBundle(arguments ?: Bundle()).detailParams.uid
-        detailViewModel.loadUser(uid)
     }
 }
 

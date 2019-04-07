@@ -1,5 +1,6 @@
 package com.ing.android.coolusers.view.ui.userlist
 
+import android.content.res.Configuration
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -50,12 +51,11 @@ class UserListFragment : BaseFragment() {
                         UserListFragmentDirections.showUserDetail(UserDetailParams(it.id))
                 )
             }
-            listViewModel.userList.observe(this@UserListFragment, Observer { users ->
+            listViewModel.getUsers().observe(this@UserListFragment, Observer { users ->
                 val headUsers = users?.take(10)
                 (adapter as? UserListAdapter ?: throw IllegalArgumentException("wrong adapter!")).submitList(headUsers)
                 (adapter as UserListAdapter).notifyItemChanged(0)
             })
         }
-        listViewModel.loadUserList()
     }
 }
