@@ -2,15 +2,12 @@ package com.ing.android.coolusers.view.ui.userlist
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import androidx.navigation.findNavController
 import androidx.recyclerview.widget.DiffUtil.ItemCallback
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
 import com.bumptech.glide.Glide
-import com.ing.android.coolusers.R
-import com.ing.android.coolusers.domain.objects.User
+import com.ing.android.coolusers.domain.dto.User
 import com.ing.android.coolusers.databinding.UserListItemBinding
-import com.ing.android.coolusers.view.ui.userdetail.UserDetailParams
 
 class UserListAdapter(private val listener: (User) -> Unit) :
         ListAdapter<User, UserHolder>(object : ItemCallback<User>() {

@@ -1,7 +1,7 @@
 package com.ing.android.coolusers.service
 
 import com.ing.android.coolusers.domain.listeners.GenericListener
-import com.ing.android.coolusers.domain.objects.User
+import com.ing.android.coolusers.domain.dto.User
 
 /**
  * Desc: Services (use cases) available for "User"

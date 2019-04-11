@@ -1,12 +1,9 @@
 package com.ing.android.coolusers.providers.service
 
 import android.content.Context
-import android.os.Bundle
 import com.ing.android.coolusers.domain.listeners.GenericListener
-import com.ing.android.coolusers.domain.objects.User
-import com.ing.android.coolusers.domain.usecases.CommandGateway
-import com.ing.android.coolusers.domain.usecases.GetUserList
-import com.ing.android.coolusers.service.DataLoader
+import com.ing.android.coolusers.domain.dto.User
+import com.ing.android.coolusers.service.DataSource
 import com.ing.android.coolusers.service.UserService
 import com.ing.android.coolusers.utilities.InjectionUtils
 import com.ing.android.coolusers.utilities.SingletonHolder
@@ -17,28 +14,28 @@ import com.ing.android.coolusers.utilities.SingletonHolder
 
 class UserServiceImpl private constructor(context: Context) : UserService {
 
-    val dataLoader: DataLoader by lazy {
+    val dataSource: DataSource by lazy {
         InjectionUtils.provideLocalDataLoader(context)
     }
 
     override fun getUser(uid: String, queryParams: Map<String, String>, genericListener: GenericListener) {
-        dataLoader.getUser(uid, queryParams, genericListener)
+        dataSource.getUser(uid, queryParams, genericListener)
     }
 
     override fun createUser(user: User, queryParams: Map<String, String>, genericListener: GenericListener) {
-        dataLoader.createUser(user, queryParams, genericListener)
+        dataSource.createUser(user, queryParams, genericListener)
     }
 
     override fun deleteUser(uid: String, queryParams: Map<String, String>, genericListener: GenericListener) {
-        dataLoader.deleteUser(uid, queryParams, genericListener)
+        dataSource.deleteUser(uid, queryParams, genericListener)
     }
 
     override fun modifyUser(user: User, queryParams: Map<String, String>, genericListener: GenericListener) {
-        dataLoader.updateUser(user, queryParams, genericListener)
+        dataSource.updateUser(user, queryParams, genericListener)
     }
 
     override fun getUserList(queryParams: Map<String, String>, genericListener: GenericListener) {
-        dataLoader.getUserList(queryParams, genericListener)
+        dataSource.getUserList(queryParams, genericListener)
     }
 
     companion object : SingletonHolder<UserServiceImpl, Context>(::UserServiceImpl)

@@ -1,6 +1,5 @@
 package com.ing.android.coolusers.view.ui.userlist
 
-import android.content.res.Configuration
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -11,11 +10,11 @@ import androidx.navigation.NavHost
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.ing.android.coolusers.R
-import com.ing.android.coolusers.domain.objects.User
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.DefaultItemAnimator
 import com.ing.android.coolusers.view.ui.BaseFragment
 import com.ing.android.coolusers.view.ui.userdetail.UserDetailParams
+import viewmodels.UserListViewModel
 
 class UserListFragment : BaseFragment() {
 
@@ -51,7 +50,7 @@ class UserListFragment : BaseFragment() {
                         UserListFragmentDirections.showUserDetail(UserDetailParams(it.id))
                 )
             }
-            listViewModel.getUsers().observe(this@UserListFragment, Observer { users ->
+            listViewModel.getUsers().observe(viewLifecycleOwner, Observer { users ->
                 val headUsers = users?.take(10)
                 (adapter as? UserListAdapter ?: throw IllegalArgumentException("wrong adapter!")).submitList(headUsers)
                 (adapter as UserListAdapter).notifyItemChanged(0)

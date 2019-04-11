@@ -7,7 +7,7 @@ import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 import com.ing.android.coolusers.coroutine.AppScope
 import com.ing.android.coolusers.domain.listeners.*
-import com.ing.android.coolusers.domain.objects.User
+import com.ing.android.coolusers.domain.dto.User
 import com.ing.android.coolusers.domain.usecases.CommandGateway
 import com.ing.android.coolusers.domain.usecases.USER_ID_BUNDLE_KEY
 import com.ing.android.coolusers.utilities.InjectionUtils

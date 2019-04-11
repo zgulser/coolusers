@@ -1,6 +1,5 @@
 package com.ing.android.coolusers.view.ui.userdetail
 
-import android.content.res.Configuration
 import android.os.Bundle
 import android.os.Parcelable
 import android.view.LayoutInflater
@@ -12,6 +11,7 @@ import com.bumptech.glide.Glide
 import com.ing.android.coolusers.databinding.UserDetailFragmentBinding
 import com.ing.android.coolusers.view.ui.BaseFragment
 import kotlinx.android.parcel.Parcelize
+import viewmodels.UserDetailViewModel
 
 class UserDetailFragment : BaseFragment() {
 
@@ -42,7 +42,7 @@ class UserDetailFragment : BaseFragment() {
     }
 
     private fun setupDetailView() {
-        detailViewModel.getUser().observe(this, Observer { pUser ->
+        detailViewModel.getUser().observe(viewLifecycleOwner, Observer { pUser ->
             detailItemBinding.apply {
                 userPresenter = UserDetailPresenter(activity!!.applicationContext, detailViewModel)
                 executePendingBindings()

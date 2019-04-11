@@ -2,7 +2,7 @@ package com.ing.android.coolusers
 
 import com.ing.android.coolusers.domain.listeners.GetUserListListener
 import com.ing.android.coolusers.domain.listeners.GetUserListener
-import com.ing.android.coolusers.domain.objects.User
+import com.ing.android.coolusers.domain.dto.User
 import com.ing.android.coolusers.utilities.*
 import org.junit.Test
 import org.junit.runner.RunWith

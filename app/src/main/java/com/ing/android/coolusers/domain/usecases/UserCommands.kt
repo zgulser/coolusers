@@ -2,7 +2,7 @@ package com.ing.android.coolusers.domain.usecases
 
 import android.os.Bundle
 import com.ing.android.coolusers.domain.listeners.GenericListener
-import com.ing.android.coolusers.domain.objects.User
+import com.ing.android.coolusers.domain.dto.User
 
 /**
  * Desc: Use cases for the user table

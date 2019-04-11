@@ -58,6 +58,9 @@ dependencies {
     implementation "android.arch.navigation:navigation-fragment-ktx:${navigationVersion}-beta01"
     implementation "android.arch.navigation:navigation-ui-ktx:${navigationVersion}-beta01"
 
+    implementation "androidx.room:room-runtime:$roomVersion"
+    annotationProcessor "androidx.room:room-compiler:$roomVersion" // For Kotlin use kapt instead of annotationProcessor
+
     implementation "com.google.code.gson:gson:$gsonVersion"
     implementation "de.hdodenhof:circleimageview:$circleImgViewVersion"
     implementation "com.github.bumptech.glide:glide:$glideVersion"

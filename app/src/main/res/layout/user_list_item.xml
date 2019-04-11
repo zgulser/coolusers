@@ -6,7 +6,7 @@
     <data>
         <variable
             name="user"
-            type="com.ing.android.coolusers.domain.objects.User" />
+            type="com.ing.android.coolusers.domain.dto.User" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

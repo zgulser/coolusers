@@ -7,7 +7,7 @@ import com.google.gson.JsonSyntaxException
 import com.google.gson.reflect.TypeToken
 import com.ing.android.coolusers.domain.listeners.GenericListener
 import com.ing.android.coolusers.domain.listeners.UserResult
-import com.ing.android.coolusers.domain.objects.User
+import com.ing.android.coolusers.domain.dto.User
 import com.ing.android.coolusers.domain.usecases.*
 import com.ing.android.coolusers.providers.data.gateways.local.GetUserAssetsCommandGateway
 import com.ing.android.coolusers.utilities.InjectionUtils

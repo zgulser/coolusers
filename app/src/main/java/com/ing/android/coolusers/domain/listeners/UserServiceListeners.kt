@@ -1,6 +1,6 @@
 package com.ing.android.coolusers.domain.listeners
 
-import com.ing.android.coolusers.domain.objects.User
+import com.ing.android.coolusers.domain.dto.User
 
 sealed class UserResult{
     data class UserSuccess(val user: User): UserResult()
