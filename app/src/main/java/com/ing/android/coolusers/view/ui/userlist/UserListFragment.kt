@@ -50,7 +50,7 @@ class UserListFragment : BaseFragment() {
                         UserListFragmentDirections.showUserDetail(UserDetailParams(it.id))
                 )
             }
-            listViewModel.getUsers().observe(viewLifecycleOwner, Observer { users ->
+            listViewModel.getUserList().observe(viewLifecycleOwner, Observer { users ->
                 val headUsers = users?.take(10)
                 (adapter as? UserListAdapter ?: throw IllegalArgumentException("wrong adapter!")).submitList(headUsers)
                 (adapter as UserListAdapter).notifyItemChanged(0)

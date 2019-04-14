@@ -8,7 +8,6 @@ import com.ing.android.coolusers.domain.dto.User
  */
 
 interface UserService {
-
     fun getUser(uid: String, queryParams: Map<String, String>, genericListener: GenericListener)
 
     fun createUser(user: User, queryParams: Map<String, String>, genericListener: GenericListener)

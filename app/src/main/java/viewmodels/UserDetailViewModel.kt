@@ -2,6 +2,7 @@ package viewmodels
 
 import android.app.Application
 import android.content.Intent
+import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.localbroadcastmanager.content.LocalBroadcastManager
 import com.ing.android.coolusers.domain.listeners.GetUserListener
@@ -11,7 +12,9 @@ import java.util.*
 
 class UserDetailViewModel constructor(application: Application, private val userId: String): BaseViewModel(application) {
 
-    private val user: MutableLiveData<User> = MutableLiveData()
+    private val user by lazy {
+        MutableLiveData<User>()
+    }
 
     init {
         loadUser()
@@ -21,7 +24,7 @@ class UserDetailViewModel constructor(application: Application, private val user
     private fun loadUser() =
             userInteractor.getUser(userId, HashMap(), UserListener())
 
-    fun getUser() = user
+    fun getUser() : LiveData<User> = user
 
     private inner class UserListener : GetUserListener {
 
@@ -35,6 +38,4 @@ class UserDetailViewModel constructor(application: Application, private val user
             LocalBroadcastManager.getInstance(getApplication()).sendBroadcast(intent)
         }
     }
-
-
 }

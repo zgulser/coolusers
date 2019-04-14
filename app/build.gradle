@@ -28,12 +28,12 @@ android {
         }
     }
 
-    androidExtensions {
-        experimental = true
-    }
-
     dataBinding {
         enabled = true
+    }
+
+    androidExtensions {
+        experimental = true
     }
 
     compileOptions {
@@ -58,8 +58,10 @@ dependencies {
     implementation "android.arch.navigation:navigation-fragment-ktx:${navigationVersion}-beta01"
     implementation "android.arch.navigation:navigation-ui-ktx:${navigationVersion}-beta01"
 
-    implementation "androidx.room:room-runtime:$roomVersion"
-    annotationProcessor "androidx.room:room-compiler:$roomVersion" // For Kotlin use kapt instead of annotationProcessor
+    implementation "androidx.room:room-runtime:$rootProject.roomVersion"
+    //annotationProcessor "androidx.room:room-compiler:$rootProject.roomVersion"
+    //kapt "androidx.room:room-compiler:$rootProject.roomVersion"
+    kapt "android.arch.persistence.room:compiler:$roomVersion"
 
     implementation "com.google.code.gson:gson:$gsonVersion"
     implementation "de.hdodenhof:circleimageview:$circleImgViewVersion"

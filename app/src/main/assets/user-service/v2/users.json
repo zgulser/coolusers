@@ -5,9 +5,7 @@
     "phone": "+31 6 20 520 117",
     "email": "jenny@gmail.com",
     "age": 23,
-    "groups": [
-      "User"
-    ],
+    "groups": "User",
     "imageThumbnailUrl": "https://api.adorable.io/avatars/96/eyes1@adorable.png",
     "imageUrl": "https://api.adorable.io/avatars/300/eyes1@adorable.png"
   },
@@ -17,9 +15,7 @@
     "phone": "+31 8 20 520 117",
     "email": "katrin@gmail.com",
     "age": 37,
-    "groups": [
-      "User"
-    ],
+    "groups": "User",
     "imageThumbnailUrl": "https://api.adorable.io/avatars/96/eyes2@adorable.png",
     "imageUrl": "https://api.adorable.io/avatars/300/eyes2@adorable.png"
   },
@@ -28,9 +24,7 @@
     "id": "3",
     "phone": "+31 6 20 520 117",
     "email": "tom@gmail.com",
-    "groups": [
-      "User"
-    ],
+    "groups": "User",
     "age": 14,
     "imageThumbnailUrl": "https://api.adorable.io/avatars/96/eyes3@adorable.png",
     "imageUrl": "https://api.adorable.io/avatars/300/eyes3@adorable.png"
@@ -40,9 +34,7 @@
     "id": "5",
     "phone": "+31 6 20 520 117",
     "email": "zeki@gmail.com",
-    "groups": [
-      "Moderator"
-    ],
+    "groups": "Moderator",
     "age": 32,
     "imageThumbnailUrl": "https://api.adorable.io/avatars/96/eyes5@adorable.png",
     "imageUrl": "https://api.adorable.io/avatars/300/eyes5@adorable.png"
@@ -53,9 +45,7 @@
     "phone": "+31 6 20 520 117",
     "email": "john@gmail.com",
     "age": 33,
-    "groups": [
-      "Moderator"
-    ],
+    "groups": "Moderator",
     "imageThumbnailUrl": "https://api.adorable.io/avatars/96/eyes7@adorable.png",
     "imageUrl": "https://api.adorable.io/avatars/300/eyes7@adorable.png"
   },
@@ -65,9 +55,7 @@
     "phone": "+31 6 20 520 117",
     "email": "bob41@gmail.com",
     "age": 41,
-    "groups": [
-      "Moderator", "User"
-    ],
+    "groups": "Moderator, User",
     "imageThumbnailUrl": "https://api.adorable.io/avatars/96/nose1@adorable.png",
     "imageUrl": "https://api.adorable.io/avatars/300/nose1@adorable.png"
   },
@@ -77,9 +65,7 @@
     "phone": "+31 6 20 520 117",
     "email": "syd@gmail.com",
     "age": 73,
-    "groups": [
-      "Admin"
-    ],
+    "groups": "Admin",
     "imageThumbnailUrl": "https://api.adorable.io/avatars/96/nose4@adorable.png",
     "imageUrl": "https://api.adorable.io/avatars/300/nose4@adorable.png"
   },
@@ -89,9 +75,7 @@
     "phone": "+31 6 20 520 117",
     "email": "bart@gmail.com",
     "age": 16,
-    "groups": [
-      "User"
-    ],
+    "groups": "User",
     "imageThumbnailUrl": "https://api.adorable.io/avatars/96/nose5@adorable.png",
     "imageUrl": "https://api.adorable.io/avatars/300/nose5@adorable.png"
   },
@@ -101,9 +85,7 @@
     "phone": "+31 6 20 520 117",
     "email": "homer@gmail.com",
     "age": 60,
-    "groups": [
-      "User"
-    ],
+    "groups": "User",
     "imageThumbnailUrl": "https://api.adorable.io/avatars/96/nose8@adorable.png",
     "imageUrl": "https://api.adorable.io/avatars/300/nose8@adorable.png"
   },
@@ -113,9 +95,7 @@
     "phone": "+31 6 20 520 117",
     "email": "bart@gmail.com",
     "age": 16,
-    "groups": [
-      "User"
-    ],
+    "groups": "User",
     "imageThumbnailUrl": "https://api.adorable.io/avatars/96/mouth1@adorable.png",
     "imageUrl": "https://api.adorable.io/avatars/300/mouth1@adorable.png"
   },
@@ -125,9 +105,7 @@
     "phone": "+31 6 20 520 117",
     "email": "theo@gmail.com",
     "age": 26,
-    "groups": [
-      "User"
-    ],
+    "groups": "User",
     "imageThumbnailUrl": "https://api.adorable.io/avatars/96/mouth3@adorable.png",
     "imageUrl": "https://api.adorable.io/avatars/300/mouth3@adorable.png"
   },
@@ -137,9 +115,7 @@
     "phone": "+31 6 20 520 117",
     "email": "chuck@gmail.com",
     "age": 43,
-    "groups": [
-      "User"
-    ],
+    "groups": "User",
     "imageThumbnailUrl": "https://api.adorable.io/avatars/96/mouth4@adorable.png",
     "imageUrl": "https://api.adorable.io/avatars/300/mouth4@adorable.png"
   },
@@ -149,9 +125,7 @@
     "phone": "+31 6 20 520 117",
     "email": "jasmin@gmail.com",
     "age": 64,
-    "groups": [
-      "User"
-    ],
+    "groups": "User",
     "imageThumbnailUrl": "https://api.adorable.io/avatars/96/mouth6@adorable.png",
     "imageUrl": "https://api.adorable.io/avatars/300/mouth6@adorable.png"
   },
@@ -161,9 +135,7 @@
     "phone": "+31 6 20 520 117",
     "email": "sera@gmail.com",
     "age": 34,
-    "groups": [
-      "User"
-    ],
+    "groups": "User",
     "imageThumbnailUrl": "https://api.adorable.io/avatars/96/mouth7@adorable.png",
     "imageUrl": "https://api.adorable.io/avatars/300/mouth7@adorable.png"
   },
@@ -173,9 +145,7 @@
     "phone": "+31 6 20 520 117",
     "email": "ada@gmail.com",
     "age": 150,
-    "groups": [
-      "User"
-    ],
+    "groups": "User",
     "imageThumbnailUrl": "https://api.adorable.io/avatars/96/nose2@adorable.png",
     "imageUrl": "https://api.adorable.io/avatars/300/nose2@adorable.png"
   },
@@ -185,9 +155,7 @@
     "phone": "+31 6 20 520 117",
     "email": "gandie@gmail.com",
     "age": 2000,
-    "groups": [
-      "God"
-    ],
+    "groups": "Admin",
     "imageThumbnailUrl": "https://api.adorable.io/avatars/96/eyes9@adorable.png",
     "imageUrl": "https://api.adorable.io/avatars/300/eyes9@adorable.png"
   }

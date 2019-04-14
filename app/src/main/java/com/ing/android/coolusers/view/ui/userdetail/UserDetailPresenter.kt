@@ -18,8 +18,9 @@ class UserDetailPresenter constructor(val context: Context, val uservm: UserDeta
             context.resources.getString(R.string.user_email_presenter).format(uservm.getUser().value?.email)
 
     fun getGroups() =
-            context.resources.getString(R.string.user_groups_presenter).format(groupsAsStr(uservm.getUser().value))
+            context.resources.getString(R.string.user_groups_presenter).format(uservm.getUser().value?.groups)
 
+    @SuppressWarnings("not used")
     private fun groupsAsStr(user: User?) : StringBuilder {
         val group = StringBuilder()
         for ((index, value) in user?.groups?.iterator()!!.withIndex()) {

@@ -6,8 +6,11 @@ import com.ing.android.coolusers.domain.dto.User
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
+import androidx.room.TypeConverters
+import com.ing.android.coolusers.domain.dto.Group
 
-@Database(entities = [User::class], version = 1)
+@Database(entities = [User::class], version = 1, exportSchema = false)
+@TypeConverters(Group::class)
 abstract class UserDatabase : RoomDatabase() {
 
     abstract fun userDao(): UserDao
@@ -25,10 +28,8 @@ abstract class UserDatabase : RoomDatabase() {
         // Create and pre-populate the database. See this article for more details:
 
         private fun buildDatabase(context: Context): UserDatabase {
-            return Room.databaseBuilder(
-                    context,
-                    UserDatabase::class.java, "user-app-database"
-            ).build()
+            return Room.databaseBuilder(context, UserDatabase::class.java, "user-database")
+                    .allowMainThreadQueries().build()
         }
     }
 }

@@ -4,9 +4,7 @@
   "phone": "+31 6 20 520 117",
   "email": "homer@gmail.com",
   "age": 60,
-  "groups": [
-    "User"
-  ],
+  "groups": "User",
   "imageThumbnailUrl": "https://api.adorable.io/avatars/96/nose8@adorable.png",
   "imageUrl": "https://api.adorable.io/avatars/300/nose8@adorable.png"
 }
