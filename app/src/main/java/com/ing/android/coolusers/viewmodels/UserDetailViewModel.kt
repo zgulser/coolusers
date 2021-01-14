@@ -1,4 +1,4 @@
-package viewmodels
+package com.ing.android.coolusers.viewmodels
 
 import android.app.Application
 import android.content.Intent
@@ -10,7 +10,7 @@ import com.ing.android.coolusers.domain.dto.User
 import com.ing.android.coolusers.view.EVENT_USER_LOAD_FAILED
 import java.util.*
 
-class UserDetailViewModel constructor(application: Application, private val userId: String): BaseViewModel(application) {
+internal class UserDetailViewModel constructor(application: Application, private val userId: String): BaseViewModel(application) {
 
     private val user by lazy {
         MutableLiveData<User>()

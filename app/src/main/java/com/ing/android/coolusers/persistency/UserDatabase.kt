@@ -28,8 +28,7 @@ abstract class UserDatabase : RoomDatabase() {
         // Create and pre-populate the database. See this article for more details:
 
         private fun buildDatabase(context: Context): UserDatabase {
-            return Room.databaseBuilder(context, UserDatabase::class.java, "user-database")
-                    .allowMainThreadQueries().build()
+            return Room.databaseBuilder(context, UserDatabase::class.java, "user-database").build()
         }
     }
 }

@@ -11,7 +11,7 @@ import com.bumptech.glide.Glide
 import com.ing.android.coolusers.databinding.UserDetailFragmentBinding
 import com.ing.android.coolusers.view.ui.BaseFragment
 import kotlinx.android.parcel.Parcelize
-import viewmodels.UserDetailViewModel
+import com.ing.android.coolusers.viewmodels.UserDetailViewModel
 
 class UserDetailFragment : BaseFragment() {
 

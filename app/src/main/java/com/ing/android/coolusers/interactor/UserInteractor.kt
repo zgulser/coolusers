@@ -28,6 +28,11 @@ class UserInteractor(private val context: Context){
         return userDao.getUser(uid)
     }
 
+    @SuppressWarnings("not used")
+    fun loadUser(uid: String, queryParams: Map<String, String>, genericListener: GenericListener): User {
+        return userDao.loadUser(uid)
+    }
+
     private fun refreshUser(uid: String, queryParams: Map<String, String>, genericListener: GenericListener){
         userService.getUser(uid, queryParams, object : GetUserListener {
             override fun onSuccess(result: User) {
@@ -60,7 +65,7 @@ class UserInteractor(private val context: Context){
         })
     }
 
-    //TODO
+    @SuppressWarnings("not used")
     fun modifyUser(user: User, queryParams: Map<String, String>, genericListener: GenericListener){
         userService.modifyUser(user, queryParams, genericListener)
     }

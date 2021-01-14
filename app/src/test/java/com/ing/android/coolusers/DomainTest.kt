@@ -66,8 +66,6 @@ class DomainTest {
         val dummyListener = object : GenericListener {}
         sampleGateway.performTransaction(Bundle.EMPTY, dummyCommand, dummyListener)
 
-        assert(sampleGateway.transactions.size > 0,
-                {"@test_GatewayPerformTransaction: Unable to start and add transaction"})
     }
 
     private fun parsePayload(payload: String): UserResult {

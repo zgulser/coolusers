@@ -1,15 +1,14 @@
-package viewmodels
+package com.ing.android.coolusers.viewmodels
 
 import android.app.Application
 import android.content.Intent
 import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
 import androidx.localbroadcastmanager.content.LocalBroadcastManager
 import com.ing.android.coolusers.domain.listeners.GetUserListListener
 import com.ing.android.coolusers.domain.dto.User
 import com.ing.android.coolusers.view.EVENT_USER_LIST_LOAD_FAILED
 
-class UserListViewModel constructor(application: Application): BaseViewModel(application) {
+internal class UserListViewModel constructor(application: Application): BaseViewModel(application) {
 
     private val userList : LiveData<List<User>>
 
@@ -17,7 +16,7 @@ class UserListViewModel constructor(application: Application): BaseViewModel(app
         userList = loadUserList()
     }
 
-    fun loadUserList() =
+    private fun loadUserList() =
             userInteractor.getUserList(HashMap(), CustomUserListListener())
 
     fun getUserList() =

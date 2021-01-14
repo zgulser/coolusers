@@ -3,6 +3,7 @@ package com.ing.android.coolusers.coroutine
 import android.util.Log
 import kotlinx.coroutines.CoroutineExceptionHandler
 import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.launch
 import kotlinx.coroutines.plus
 
 const val TAG = "Cool Users!"
@@ -13,3 +14,5 @@ val LoggingExceptionHandler = CoroutineExceptionHandler { _, throwable ->
 }
 
 val AppScope = GlobalScope + LoggingExceptionHandler
+
+

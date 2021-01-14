@@ -3,10 +3,10 @@ package com.ing.android.coolusers.view.ui.userdetail
 import android.content.Context
 import com.ing.android.coolusers.R
 import com.ing.android.coolusers.domain.dto.User
-import viewmodels.UserDetailViewModel
+import com.ing.android.coolusers.viewmodels.UserDetailViewModel
 import java.lang.StringBuilder
 
-class UserDetailPresenter constructor(val context: Context, val uservm: UserDetailViewModel) {
+internal class UserDetailPresenter constructor(val context: Context, val uservm: UserDetailViewModel) {
 
     fun getName() =
             context.resources.getString(R.string.user_name_presenter).format(uservm.getUser().value?.name)

@@ -2,7 +2,7 @@ apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-kapt'
-apply plugin: 'androidx.navigation.safeargs.kotlin'
+//apply plugin: 'androidx.navigation.safeargs.kotlin'
 
 android {
     compileSdkVersion rootProject.compileSdkVersion
@@ -60,7 +60,7 @@ dependencies {
 
     implementation "androidx.room:room-runtime:$rootProject.roomVersion"
     //annotationProcessor "androidx.room:room-compiler:$rootProject.roomVersion"
-    //kapt "androidx.room:room-compiler:$rootProject.roomVersion"
+    kapt "androidx.room:room-compiler:$rootProject.roomVersion"
     kapt "android.arch.persistence.room:compiler:$roomVersion"
 
     implementation "com.google.code.gson:gson:$gsonVersion"
@@ -73,3 +73,32 @@ dependencies {
     testImplementation "org.mockito:mockito-core:$mockitoVersion"
 }
 
+
+// TASK EXAMPLE
+
+println("wohoo 0")
+
+task Foo {
+
+    println("wohoo 1")
+
+    doLast {
+        if (project.hasProperty("lame")){
+            println("this is a ${getProperty("lame")} property")
+        }
+        println("wohoo 3")
+    }
+
+    println("wohoo 2")
+}
+
+tasks.clean.finalizedBy("Foo")
+
+
+// METHOD CALL EXAMPLE
+
+void doSth(String sth){
+    println(sth)
+}
+
+doSth "something"
